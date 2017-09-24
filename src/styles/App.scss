@@ -32,5 +32,81 @@ a {
 // Constants
 
 // Layout
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.tgt {
+  display: flex;
+  justify-content: center;
+}
 
 // App Styles
+
+// Fretboard
+.fretboard {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  .string {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid black;
+
+    .fret {
+      background-color: $guitar-neck;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: yellow;
+      }
+    }
+  }
+
+  .annotations {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &.lefty {
+    .string {
+      flex-direction: row-reverse;
+
+      .fret {
+        border-left: 1px solid brown;
+      }
+    }
+
+    .annotations {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &.righty {
+    .string {
+      flex-direction: row;
+
+      .fret {
+        border-right: 1px solid brown;
+      }
+    }
+
+    .annotations {
+      flex-direction: row;
+    }
+  }
+
+}

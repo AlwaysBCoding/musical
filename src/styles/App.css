@@ -15,4 +15,52 @@ a {
 *:focus {
   outline: none; }
 
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; }
+
+.tgt {
+  display: flex;
+  justify-content: center; }
+
+.fretboard {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer; }
+  .fretboard .string {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid black; }
+    .fretboard .string .fret {
+      background-color: #362a32;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .fretboard .string .fret:hover {
+        background-color: yellow; }
+  .fretboard .annotations {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+  .fretboard.lefty .string {
+    flex-direction: row-reverse; }
+    .fretboard.lefty .string .fret {
+      border-left: 1px solid brown; }
+  .fretboard.lefty .annotations {
+    flex-direction: row-reverse; }
+  .fretboard.righty .string {
+    flex-direction: row; }
+    .fretboard.righty .string .fret {
+      border-right: 1px solid brown; }
+  .fretboard.righty .annotations {
+    flex-direction: row; }
+
 /*# sourceMappingURL=App.css.map */
