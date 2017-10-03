@@ -32,7 +32,7 @@ a {
 // Constants
 
 // Layout
-.container {
+.view-container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -61,6 +61,16 @@ a {
     justify-content: space-around;
     border-bottom: 2px solid black;
 
+    .open-string {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.active {
+        background-color: orange; } }
+
     .fret {
       background-color: $guitar-neck;
       height: 100%;
@@ -69,44 +79,34 @@ a {
       justify-content: center;
       align-items: center;
 
+      &.active {
+        background-color: orange; }
+
       &:hover {
-        background-color: yellow;
-      }
-    }
-  }
+        background-color: yellow; } } }
 
   .annotations {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-  }
+    align-items: center; }
 
   &.lefty {
     .string {
       flex-direction: row-reverse;
 
       .fret {
-        border-left: 1px solid brown;
-      }
-    }
+        border-left: 1px solid brown; } }
 
     .annotations {
-      flex-direction: row-reverse;
-    }
-  }
+      flex-direction: row-reverse; } }
 
   &.righty {
     .string {
       flex-direction: row;
 
       .fret {
-        border-right: 1px solid brown;
-      }
-    }
+        border-right: 1px solid brown; } }
 
     .annotations {
-      flex-direction: row;
-    }
-  }
-
+      flex-direction: row; } }
 }

@@ -1,11 +1,23 @@
 import React from 'react'
 import _ from 'lodash'
+import ScalesData from '../data/scales.json'
 
 const NOTES_MANIFEST = ["C", "CD", "D", "DE", "E", "F", "FG", "G", "GA", "A", "AB", "B"]
+const ALL_SCALES = ScalesData
 
 class Guitar {
 
-  constructor() {}
+  static generateFretboardForString({openString, numberOfFrets=21}) {
+    var rootIndex = _.indexOf(NOTES_MANIFEST, openString)
+    var frets = []
+    _.times(numberOfFrets, (fretIndex) => {
+      frets.push(NOTES_MANIFEST[(rootIndex + (fretIndex + 1)) % 12])
+    })
+    return {
+      "openString": openString,
+      "frets": frets
+    }
+  }
 
   static generateFretboard(openString) {
     var rootIndex = _.indexOf(NOTES_MANIFEST, openString)
@@ -51,7 +63,7 @@ class Guitar {
           NOTES_MANIFEST[(rootIndex + 7) % 12],
           NOTES_MANIFEST[(rootIndex + 9) % 12],
           NOTES_MANIFEST[(rootIndex + 11) % 12],
-          NOTES_MANIFEST[(rootIndex + 12) % 12]
+          // NOTES_MANIFEST[(rootIndex + 12) % 12]
         ]
         break;
 
@@ -64,7 +76,7 @@ class Guitar {
           NOTES_MANIFEST[(rootIndex + 7) % 12],
           NOTES_MANIFEST[(rootIndex + 8) % 12],
           NOTES_MANIFEST[(rootIndex + 10) % 12],
-          NOTES_MANIFEST[(rootIndex + 12) % 12]
+          // NOTES_MANIFEST[(rootIndex + 12) % 12]
         ]
         break;
 
@@ -111,6 +123,25 @@ class Guitar {
     return {
       "rootNote": rootNote,
       "scale": scale
+    }
+  }
+
+  static findScales(notes) {
+    var uniqueNotes = _.uniq(notes)
+    switch(uniqueNotes.length) {
+      case 3:
+        return _.filter(ALL_SCALES, (scale) => {
+          return _.isEqual(_.sortBy(uniqueNotes), _.sortBy([scale.scale[0], scale.scale[2], scale.scale[4]]))
+        })
+        break;
+      case 7:
+        return _.filter(ALL_SCALES, (scale) => {
+          return _.isEqual(_.sortBy(uniqueNotes), _.sortBy(scale.scale))
+        })
+        break;
+      default:
+        return []
+        break;
     }
   }
 

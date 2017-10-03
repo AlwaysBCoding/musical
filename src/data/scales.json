@@ -1,0 +1,27 @@
+[
+  {"note": "C", "scaleType": "major", "scale": ["C", "D", "E", "F", "G", "A", "B"]},
+  {"note": "CD", "scaleType": "major", "scale": ["CD", "DE", "F", "FG", "GA", "AB", "C"]},
+  {"note": "D", "scaleType": "major", "scale": ["D", "E", "FG", "G", "A", "B", "CD"]},
+  {"note": "DE", "scaleType": "major", "scale": ["DE", "F", "G", "GA", "AB", "C", "D"]},
+  {"note": "E", "scaleType": "major", "scale": ["E", "FG", "GA", "A", "B", "CD", "DE"]},
+  {"note": "F", "scaleType": "major", "scale": ["F", "G", "A", "AB", "C", "D", "E"]},
+  {"note": "FG", "scaleType": "major", "scale": ["FG", "GA", "AB", "B", "CD", "DE", "F"]},
+  {"note": "G", "scaleType": "major", "scale": ["G", "A", "B", "C", "D", "E", "FG"]},
+  {"note": "GA", "scaleType": "major", "scale": ["GA", "AB", "C", "CD", "DE", "F", "G"]},
+  {"note": "A", "scaleType": "major", "scale": ["A", "B", "CD", "D", "E", "FG", "GA"]},
+  {"note": "AB", "scaleType": "major", "scale": ["AB", "C", "D", "DE", "F", "G", "A"]},
+  {"note": "B", "scaleType": "major", "scale": ["B", "CD", "DE", "E", "FG", "GA", "AB"]},
+
+  {"note": "C", "scaleType": "minor", "scale": ["C", "D", "DE", "F", "G", "GA", "AB"]},
+  {"note": "CD", "scaleType": "minor", "scale": ["CD", "DE", "E", "FG", "GA", "A", "B"]},
+  {"note": "D", "scaleType": "minor", "scale": ["D", "E", "F", "G", "A", "AB", "C"]},
+  {"note": "DE", "scaleType": "minor", "scale": ["DE", "F", "FG", "GA", "AB", "B", "CD"]},
+  {"note": "E", "scaleType": "minor", "scale": ["E", "FG", "G", "A", "B", "C", "D"]},
+  {"note": "F", "scaleType": "minor", "scale": ["F", "G", "GA", "AB", "C", "CD", "DE"]},
+  {"note": "FG", "scaleType": "minor", "scale": ["FG", "GA", "A", "B", "CD", "D", "E"]},
+  {"note": "G", "scaleType": "minor", "scale": ["G", "A", "AB", "C", "D", "DE", "F"]},
+  {"note": "GA", "scaleType": "minor", "scale": ["GA", "AB", "B", "CD", "DE", "E", "FG"]},
+  {"note": "A", "scaleType": "minor", "scale": ["A", "B", "C", "D", "E", "F", "G"]},
+  {"note": "AB", "scaleType": "minor", "scale": ["AB", "C", "CD", "DE", "F", "FG", "GA"]},
+  {"note": "B", "scaleType": "minor", "scale": ["B", "CD", "D", "E", "FG", "G", "A"]}
+]

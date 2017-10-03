@@ -15,7 +15,7 @@ a {
 *:focus {
   outline: none; }
 
-.container {
+.view-container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -37,6 +37,14 @@ a {
     align-items: center;
     justify-content: space-around;
     border-bottom: 2px solid black; }
+    .fretboard .string .open-string {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .fretboard .string .open-string.active {
+        background-color: orange; }
     .fretboard .string .fret {
       background-color: #362a32;
       height: 100%;
@@ -44,6 +52,8 @@ a {
       display: flex;
       justify-content: center;
       align-items: center; }
+      .fretboard .string .fret.active {
+        background-color: orange; }
       .fretboard .string .fret:hover {
         background-color: yellow; }
   .fretboard .annotations {
