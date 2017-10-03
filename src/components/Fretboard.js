@@ -27,24 +27,36 @@ class Fretboard extends Component {
   }
 
   _renderFret({fret, fretIndex, stringIndex}) {
-    var fretActive
-    _.some(this.props.activeFrets, {fretIndex, stringIndex}) ? fretActive = 'active' : fretActive = '';
+    var fretState
+    if(_.some(this.props.activeFrets, {fretIndex, stringIndex})) {
+      fretState = 'pressed'
+    } else if (_.includes(this.props.activeNotes, fret)) {
+      fretState = 'ghosted'
+    } else {
+      fretState = ''
+    }
 
     return (
-      <div onClick={(e) => { this._fretClick(e) }} key={`fret-${fretIndex}`} className={`fret fret-${fretIndex} ${fretActive}`} data-note={fret} data-fret-index={fretIndex} data-string-index={stringIndex}>
+      <div onClick={(e) => { this._fretClick(e) }} key={`fret-${fretIndex}`} className={`fret fret-${fretIndex} ${fretState}`} data-note={fret} data-fret-index={fretIndex} data-string-index={stringIndex}>
         <p className={`note`} data-note={fret} data-fret-index={fretIndex} data-string-index={stringIndex}>{fret}</p>
       </div>
     )
   }
 
   _renderOpenString({openString, stringIndex}) {
-    var stringActive
-    _.some(this.props.activeStrings, {stringIndex, note: openString}) ? stringActive = 'active' : stringActive = '';
+    var stringState
+    if(_.some(this.props.activeStrings, {stringIndex, note: openString})) {
+      stringState = 'pressed'
+    } else if (_.includes(this.props.activeNotes, openString)) {
+      stringState = 'ghosted'
+    } else {
+      stringState = ''
+    }
 
     return (
       <div
         key={`open-string-${stringIndex}`}
-        className={`open-string open-string-${stringIndex} ${stringActive}`}
+        className={`open-string open-string-${stringIndex} ${stringState}`}
         onClick={(e) => { this._openStringClick(e) }}
         data-note={openString}
         data-string-index={stringIndex}>

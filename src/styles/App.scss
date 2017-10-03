@@ -68,8 +68,13 @@ a {
       justify-content: center;
       align-items: center;
 
-      &.active {
-        background-color: orange; } }
+      &.pressed {
+        background-color: coral; }
+
+      &.ghosted {
+        background-color: skyblue; }
+
+    }
 
     .fret {
       background-color: $guitar-neck;
@@ -79,11 +84,18 @@ a {
       justify-content: center;
       align-items: center;
 
-      &.active {
-        background-color: orange; }
+      &.pressed {
+        background-color: coral; }
+
+      &.ghosted {
+        background-color: skyblue;
+      }
 
       &:hover {
-        background-color: yellow; } } }
+        background-color: yellow; }
+
+      }
+    }
 
   .annotations {
     display: flex;

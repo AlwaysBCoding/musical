@@ -14,6 +14,30 @@ import Fretboard from './components/Fretboard'
 
 import './styles/App.css';
 
+class Analysis extends Component {
+  render() {
+    var chord, scale, relative, relativeScaleType, dominant, subdominant, cousins
+    if(this.props.analysis[0]) {
+      chord = <h2>{`CHORD: ${this.props.analysis[0].note} ${this.props.analysis[0].scaleType}`}</h2>
+      scale = <h2>{`SCALE: ${this.props.analysis[0].scale}`}</h2>
+      if(this.props.analysis[0].scaleType === "major" ) { relativeScaleType = 'minor' } else { relativeScaleType = 'major' }
+      relative = <h2>{`RELATIVE: ${this.props.analysis[0].scale[5]} ${relativeScaleType}`}</h2>
+      dominant = <h2>{`DOMINANT: ${this.props.analysis[0].scale[4]}`}</h2>
+      subdominant = <h2>{`SUBDOMINANT: ${this.props.analysis[0].scale[3]}`}</h2>
+    }
+    return (
+      <div className="analysis">
+        {chord}
+        {scale}
+        {relative}
+        {dominant}
+        {subdominant}
+        {cousins}
+      </div>
+    )
+  }
+}
+
 class App extends Component {
 
   constructor(props) {
@@ -85,27 +109,33 @@ class App extends Component {
     })
   }
 
+  _showKey() {
+    this.setState({
+      activeNotes: this.state.analysis[0].scale
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <div className="view-container">
+          <Analysis analysis={this.state.analysis} />
           <div className="tgt">
             <Fretboard
               eventEmitter={this.eventEmitter}
               activeFrets={this.state.activeFrets}
               activeStrings={this.state.activeStrings}
+              activeNotes={this.state.activeNotes}
               analysis={this.state.analysis} />
           </div>
-          <div className="frets">
+          {/*<div className="frets">
             {JSON.stringify(this.state.activeFrets)}
           </div>
           <div className="strings">
             {JSON.stringify(this.state.activeStrings)}
-          </div>
-          <div className="analysis">
-            {JSON.stringify(this.state.analysis)}
-          </div>
+          </div>*/}
           <button onClick={(event) => { this._clearState(event) }}>CLEAR STATE</button>
+          <button onClick={(event) => { this._showKey(event) }}>SHOW KEY</button>
         </div>
       </div>
     )

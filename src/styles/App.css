@@ -43,8 +43,10 @@ a {
       display: flex;
       justify-content: center;
       align-items: center; }
-      .fretboard .string .open-string.active {
-        background-color: orange; }
+      .fretboard .string .open-string.pressed {
+        background-color: coral; }
+      .fretboard .string .open-string.ghosted {
+        background-color: skyblue; }
     .fretboard .string .fret {
       background-color: #362a32;
       height: 100%;
@@ -52,8 +54,10 @@ a {
       display: flex;
       justify-content: center;
       align-items: center; }
-      .fretboard .string .fret.active {
-        background-color: orange; }
+      .fretboard .string .fret.pressed {
+        background-color: coral; }
+      .fretboard .string .fret.ghosted {
+        background-color: skyblue; }
       .fretboard .string .fret:hover {
         background-color: yellow; }
   .fretboard .annotations {
