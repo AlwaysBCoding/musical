@@ -37,16 +37,6 @@ a {
     align-items: center;
     justify-content: space-around;
     border-bottom: 2px solid black; }
-    .fretboard .string .open-string {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      .fretboard .string .open-string.pressed {
-        background-color: coral; }
-      .fretboard .string .open-string.ghosted {
-        background-color: skyblue; }
     .fretboard .string .fret {
       background-color: #362a32;
       height: 100%;
@@ -54,12 +44,14 @@ a {
       display: flex;
       justify-content: center;
       align-items: center; }
+      .fretboard .string .fret.fret-0 {
+        background-color: white; }
+      .fretboard .string .fret:hover {
+        background-color: yellow; }
       .fretboard .string .fret.pressed {
         background-color: coral; }
       .fretboard .string .fret.ghosted {
         background-color: skyblue; }
-      .fretboard .string .fret:hover {
-        background-color: yellow; }
   .fretboard .annotations {
     display: flex;
     justify-content: space-around;

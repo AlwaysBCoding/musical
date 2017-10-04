@@ -61,21 +61,6 @@ a {
     justify-content: space-around;
     border-bottom: 2px solid black;
 
-    .open-string {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &.pressed {
-        background-color: coral; }
-
-      &.ghosted {
-        background-color: skyblue; }
-
-    }
-
     .fret {
       background-color: $guitar-neck;
       height: 100%;
@@ -84,15 +69,17 @@ a {
       justify-content: center;
       align-items: center;
 
+      &.fret-0 {
+        background-color: white; }
+
+      &:hover {
+        background-color: yellow; }
+
       &.pressed {
         background-color: coral; }
 
       &.ghosted {
-        background-color: skyblue;
-      }
-
-      &:hover {
-        background-color: yellow; }
+        background-color: skyblue; }
 
       }
     }
@@ -121,4 +108,5 @@ a {
 
     .annotations {
       flex-direction: row; } }
+
 }

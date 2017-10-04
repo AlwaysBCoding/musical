@@ -43,9 +43,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeFrets: [],
-      activeStrings: [],
-      activeNotes: [],
+      pressed: [],
+      ghosted: [],
       analysis: {},
     }
   }
@@ -54,30 +53,22 @@ class App extends Component {
     this.eventEmitter = new EventEmitter()
 
     // FRETCLICK
-    this.eventEmitter.addListener("fretClick", ({fretIndex, stringIndex, note}) => {
-      var newFrets = this.state.activeFrets
-      var newNotes = this.state.activeNotes
-      newFrets.push({fretIndex, stringIndex, note})
-      newNotes.push(note)
+    this.eventEmitter.addListener("fretPress", ({fretIndex, stringIndex, note, frequency}) => {
+      var pressedFrets = this.state.pressed
+      pressedFrets.push({fretIndex, stringIndex, note, frequency})
       this.setState({
-        activeFrets: newFrets,
-        activeNotes: _.uniq(newNotes),
-        analysis: Guitar.findScales(_.uniq(newNotes))
+        pressed: pressedFrets
       })
     })
 
-    // OPENSTRINGCLICK
-    this.eventEmitter.addListener("openStringClick", ({stringIndex, note}) => {
-      var newStrings = this.state.activeStrings
-      var newNotes = this.state.activeNotes
-      newStrings.push({stringIndex, note})
-      newNotes.push(note)
+    this.eventEmitter.addListener("fretUnpress", ({fretIndex, stringIndex, note, frequency}) => {
+      var pressedFrets = this.state.pressed
+      _.remove(pressedFrets, (item) => { return (item.fretIndex === fretIndex && item.stringIndex === stringIndex)})
       this.setState({
-        activeStrings: newStrings,
-        activeNotes: _.uniq(newNotes),
-        analysis: Guitar.findScales(_.uniq(newNotes))
+        pressed: pressedFrets
       })
     })
+
   }
 
   componentDidMount() {
@@ -86,33 +77,20 @@ class App extends Component {
     // this.FR = new FretboardRenderer(document.querySelector("div.tgt"), {tuning: ["E", "A", "D", "G", "B", "E"]})
     // this.FR.renderGuitar({direction: "lefty"})
     window.Guitar = Guitar
-
-    // window.addEventListener("click", (event) => {
-    //   var newNotes = this.state.notes
-    //   if(event.target.dataset.note) {
-    //     newNotes.push(event.target.dataset.note)
-    //     this.setState({
-    //       notes: newNotes,
-    //       analysis: Guitar.findScales(newNotes)
-    //     })
-    //   }
-    // })
-
   }
 
   _clearState() {
     this.setState({
-      activeFrets: [],
-      activeStrings: [],
-      activeNotes: [],
+      pressed: [],
+      ghosted: [],
       analysis: {}
     })
   }
 
   _showKey() {
-    this.setState({
-      activeNotes: this.state.analysis[0].scale
-    })
+    // this.setState({
+    //   activeNotes: this.state.analysis[0].scale
+    // })
   }
 
   render() {
@@ -120,20 +98,14 @@ class App extends Component {
       <div className="App">
         <div className="view-container">
           <Analysis analysis={this.state.analysis} />
+          <p>{JSON.stringify(this.state.pressed)}</p>
           <div className="tgt">
             <Fretboard
               eventEmitter={this.eventEmitter}
-              activeFrets={this.state.activeFrets}
-              activeStrings={this.state.activeStrings}
-              activeNotes={this.state.activeNotes}
+              pressed={this.state.pressed}
+              ghosted={this.state.ghosted}
               analysis={this.state.analysis} />
           </div>
-          {/*<div className="frets">
-            {JSON.stringify(this.state.activeFrets)}
-          </div>
-          <div className="strings">
-            {JSON.stringify(this.state.activeStrings)}
-          </div>*/}
           <button onClick={(event) => { this._clearState(event) }}>CLEAR STATE</button>
           <button onClick={(event) => { this._showKey(event) }}>SHOW KEY</button>
         </div>
