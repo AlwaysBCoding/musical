@@ -1,0 +1,298 @@
+[
+  {"root": "C", "chordType": "major", "frets": [
+    {"stringIndex": 4, "fretIndex": 3, "note": "C"},
+    {"stringIndex": 3, "fretIndex": 2, "note": "E"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 1, "note": "C"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "C", "chordType": "minor", "frets": [
+    {"stringIndex": 4, "fretIndex": 3, "note": "C"},
+    {"stringIndex": 3, "fretIndex": 5, "note": "G"},
+    {"stringIndex": 2, "fretIndex": 5, "note": "C"},
+    {"stringIndex": 1, "fretIndex": 4, "note": "DE"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+  {"root": "C", "chordType": "major7", "frets": [
+    {"stringIndex": 4, "fretIndex": 3, "note": "C"},
+    {"stringIndex": 3, "fretIndex": 2, "note": "E"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 0, "note": "B"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "C", "chordType": "minor7", "frets": [
+    {"stringIndex": 4, "fretIndex": 3, "note": "C"},
+    {"stringIndex": 3, "fretIndex": 5, "note": "G"},
+    {"stringIndex": 2, "fretIndex": 3, "note": "AB"},
+    {"stringIndex": 1, "fretIndex": 4, "note": "DE"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+  {"root": "C", "chordType": "majorAdd9", "frets": [
+    {"stringIndex": 4, "fretIndex": 3, "note": "C"},
+    {"stringIndex": 3, "fretIndex": 2, "note": "E"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "C", "chordType": "minorAdd9", "frets": [
+    {"stringIndex": 4, "fretIndex": 3, "note": "C"},
+    {"stringIndex": 3, "fretIndex": 1, "note": "DE"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+  {"root": "C", "chordType": "sus2", "frets": [
+    {"stringIndex": 4, "fretIndex": 3, "note": "C"},
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+  {"root": "C", "chordType": "sus4", "frets": [
+    {"stringIndex": 4, "fretIndex": 3, "note": "C"},
+    {"stringIndex": 3, "fretIndex": 3, "note": "F"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 1, "note": "C"},
+    {"stringIndex": 0, "fretIndex": 1, "note": "F"}
+  ]},
+
+  {"root": "CD", "chordType": "major", "frets": []},
+  {"root": "CD", "chordType": "minor", "frets": []},
+  {"root": "CD", "chordType": "major7", "frets": []},
+  {"root": "CD", "chordType": "minor7", "frets": []},
+  {"root": "CD", "chordType": "majorAdd9", "frets": []},
+  {"root": "CD", "chordType": "minorAdd9", "frets": []},
+  {"root": "CD", "chordType": "sus2", "frets": []},
+  {"root": "CD", "chordType": "sus4", "frets": []},
+
+  {"root": "D", "chordType": "major", "frets": [
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 2, "note": "A"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 2, "note": "FG"}
+  ]},
+  {"root": "D", "chordType": "minor", "frets": [
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 2, "note": "A"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 2, "note": "F"}
+  ]},
+  {"root": "D", "chordType": "major7", "frets": [
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 2, "note": "A"},
+    {"stringIndex": 1, "fretIndex": 2, "note": "CD"},
+    {"stringIndex": 0, "fretIndex": 2, "note": "FG"}
+  ]},
+  {"root": "D", "chordType": "minor7", "frets": [
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 2, "note": "A"},
+    {"stringIndex": 1, "fretIndex": 1, "note": "C"},
+    {"stringIndex": 0, "fretIndex": 2, "note": "F"}
+  ]},
+  {"root": "D", "chordType": "majorAdd9", "frets": [
+    {"stringIndex": 4, "fretIndex": 5, "note": "D"},
+    {"stringIndex": 3, "fretIndex": 4, "note": "FG"},
+    {"stringIndex": 2, "fretIndex": 2, "note": "A"},
+    {"stringIndex": 1, "fretIndex": 5, "note": "E"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "D", "chordType": "minorAdd9", "frets": [
+    {"stringIndex": 4, "fretIndex": 5, "note": "D"},
+    {"stringIndex": 3, "fretIndex": 3, "note": "F"},
+    {"stringIndex": 2, "fretIndex": 2, "note": "A"},
+    {"stringIndex": 1, "fretIndex": 5, "note": "E"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "D", "chordType": "sus2", "frets": [
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 2, "note": "A"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "D", "chordType": "sus4", "frets": [
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 2, "note": "A"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+
+  {"root": "DE", "chordType": "major", "frets": []},
+  {"root": "DE", "chordType": "minor", "frets": []},
+  {"root": "DE", "chordType": "major7", "frets": []},
+  {"root": "DE", "chordType": "minor7", "frets": []},
+  {"root": "DE", "chordType": "majorAdd9", "frets": []},
+  {"root": "DE", "chordType": "minorAdd9", "frets": []},
+  {"root": "DE", "chordType": "sus2", "frets": []},
+  {"root": "DE", "chordType": "sus4", "frets": []},
+
+  {"root": "E", "chordType": "major", "frets": [
+    {"stringIndex": 5, "fretIndex": 0, "note": "E"},
+    {"stringIndex": 4, "fretIndex": 2, "note": "B"},
+    {"stringIndex": 3, "fretIndex": 2, "note": "E"},
+    {"stringIndex": 2, "fretIndex": 1, "note": "GA"},
+    {"stringIndex": 1, "fretIndex": 0, "note": "B"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "E", "chordType": "minor", "frets": [
+    {"stringIndex": 5, "fretIndex": 0, "note": "E"},
+    {"stringIndex": 4, "fretIndex": 2, "note": "B"},
+    {"stringIndex": 3, "fretIndex": 2, "note": "E"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 0, "note": "B"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "E", "chordType": "major7", "frets": [
+    {"stringIndex": 5, "fretIndex": 0, "note": "E"},
+    {"stringIndex": 4, "fretIndex": 2, "note": "B"},
+    {"stringIndex": 3, "fretIndex": 1, "note": "DE"},
+    {"stringIndex": 2, "fretIndex": 1, "note": "GA"},
+    {"stringIndex": 1, "fretIndex": 0, "note": "B"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "E", "chordType": "minor7", "frets": [
+    {"stringIndex": 5, "fretIndex": 0, "note": "E"},
+    {"stringIndex": 4, "fretIndex": 2, "note": "B"},
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 0, "note": "B"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "E", "chordType": "majorAdd9", "frets": [
+    {"stringIndex": 5, "fretIndex": 0, "note": "E"},
+    {"stringIndex": 4, "fretIndex": 2, "note": "B"},
+    {"stringIndex": 3, "fretIndex": 4, "note": "FG"},
+    {"stringIndex": 2, "fretIndex": 1, "note": "GA"},
+    {"stringIndex": 1, "fretIndex": 0, "note": "B"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "E", "chordType": "minorAdd9", "frets": [
+    {"stringIndex": 5, "fretIndex": 0, "note": "E"},
+    {"stringIndex": 4, "fretIndex": 2, "note": "B"},
+    {"stringIndex": 3, "fretIndex": 4, "note": "FG"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 0, "note": "B"},
+    {"stringIndex": 0, "fretIndex": 0, "note": "E"}
+  ]},
+  {"root": "E", "chordType": "sus2", "frets": []},
+  {"root": "E", "chordType": "sus4", "frets": []},
+
+  {"root": "F", "chordType": "major", "frets": []},
+  {"root": "F", "chordType": "minor", "frets": []},
+  {"root": "F", "chordType": "major7", "frets": []},
+  {"root": "F", "chordType": "minor7", "frets": []},
+  {"root": "F", "chordType": "majorAdd9", "frets": []},
+  {"root": "F", "chordType": "minorAdd9", "frets": []},
+  {"root": "F", "chordType": "sus2", "frets": []},
+  {"root": "F", "chordType": "sus4", "frets": []},
+
+  {"root": "FG", "chordType": "major", "frets": []},
+  {"root": "FG", "chordType": "minor", "frets": []},
+  {"root": "FG", "chordType": "major7", "frets": []},
+  {"root": "FG", "chordType": "minor7", "frets": []},
+  {"root": "FG", "chordType": "majorAdd9", "frets": []},
+  {"root": "FG", "chordType": "minorAdd9", "frets": []},
+  {"root": "FG", "chordType": "sus2", "frets": []},
+  {"root": "FG", "chordType": "sus4", "frets": []},
+
+  {"root": "G", "chordType": "major", "frets": [
+    {"stringIndex": 5, "fretIndex": 3, "note": "G"},
+    {"stringIndex": 4, "fretIndex": 2, "note": "B"},
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+  {"root": "G", "chordType": "minor", "frets": [
+    {"stringIndex": 5, "fretIndex": 3, "note": "G"},
+    {"stringIndex": 4, "fretIndex": 5, "note": "D"},
+    {"stringIndex": 3, "fretIndex": 5, "note": "G"},
+    {"stringIndex": 2, "fretIndex": 3, "note": "AB"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+  {"root": "G", "chordType": "major7", "frets": [
+    {"stringIndex": 5, "fretIndex": 3, "note": "G"},
+    {"stringIndex": 4, "fretIndex": 2, "note": "B"},
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 0, "note": "B"},
+    {"stringIndex": 0, "fretIndex": 2, "note": "FG"}
+  ]},
+  {"root": "G", "chordType": "minor7", "frets": [
+    {"stringIndex": 5, "fretIndex": 3, "note": "G"},
+    {"stringIndex": 4, "fretIndex": 5, "note": "D"},
+    {"stringIndex": 3, "fretIndex": 3, "note": "F"},
+    {"stringIndex": 2, "fretIndex": 3, "note": "AB"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+  {"root": "G", "chordType": "majorAdd9", "frets": [
+    {"stringIndex": 5, "fretIndex": 3, "note": "G"},
+    {"stringIndex": 4, "fretIndex": 0, "note": "A"},
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 2, "note": "A"},
+    {"stringIndex": 1, "fretIndex": 0, "note": "B"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+  {"root": "G", "chordType": "minorAdd9", "frets": [
+    {"stringIndex": 5, "fretIndex": 3, "note": "G"},
+    {"stringIndex": 4, "fretIndex": 5, "note": "D"},
+    {"stringIndex": 3, "fretIndex": 5, "note": "G"},
+    {"stringIndex": 2, "fretIndex": 3, "note": "AB"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 5, "note": "A"}
+  ]},
+  {"root": "G", "chordType": "sus2", "frets": [
+    {"stringIndex": 5, "fretIndex": 3, "note": "G"},
+    {"stringIndex": 4, "fretIndex": 0, "note": "A"},
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+  {"root": "G", "chordType": "sus4", "frets": [
+    {"stringIndex": 5, "fretIndex": 3, "note": "G"},
+    {"stringIndex": 4, "fretIndex": 3, "note": "C"},
+    {"stringIndex": 3, "fretIndex": 0, "note": "D"},
+    {"stringIndex": 2, "fretIndex": 0, "note": "G"},
+    {"stringIndex": 1, "fretIndex": 3, "note": "D"},
+    {"stringIndex": 0, "fretIndex": 3, "note": "G"}
+  ]},
+
+  {"root": "GA", "chordType": "major", "frets": []},
+  {"root": "GA", "chordType": "minor", "frets": []},
+  {"root": "GA", "chordType": "major7", "frets": []},
+  {"root": "GA", "chordType": "minor7", "frets": []},
+  {"root": "GA", "chordType": "majorAdd9", "frets": []},
+  {"root": "GA", "chordType": "minorAdd9", "frets": []},
+  {"root": "GA", "chordType": "sus2", "frets": []},
+  {"root": "GA", "chordType": "sus4", "frets": []},
+
+  {"root": "A", "chordType": "major", "frets": []},
+  {"root": "A", "chordType": "minor", "frets": []},
+  {"root": "A", "chordType": "major7", "frets": []},
+  {"root": "A", "chordType": "minor7", "frets": []},
+  {"root": "A", "chordType": "majorAdd9", "frets": []},
+  {"root": "A", "chordType": "minorAdd9", "frets": []},
+  {"root": "A", "chordType": "sus2", "frets": []},
+  {"root": "A", "chordType": "sus4", "frets": []},
+
+  {"root": "AB", "chordType": "major", "frets": []},
+  {"root": "AB", "chordType": "minor", "frets": []},
+  {"root": "AB", "chordType": "major7", "frets": []},
+  {"root": "AB", "chordType": "minor7", "frets": []},
+  {"root": "AB", "chordType": "majorAdd9", "frets": []},
+  {"root": "AB", "chordType": "minorAdd9", "frets": []},
+  {"root": "AB", "chordType": "sus2", "frets": []},
+  {"root": "AB", "chordType": "sus4", "frets": []},
+
+  {"root": "B", "chordType": "major", "frets": []},
+  {"root": "B", "chordType": "minor", "frets": []},
+  {"root": "B", "chordType": "major7", "frets": []},
+  {"root": "B", "chordType": "minor7", "frets": []},
+  {"root": "B", "chordType": "majorAdd9", "frets": []},
+  {"root": "B", "chordType": "minorAdd9", "frets": []},
+  {"root": "B", "chordType": "sus2", "frets": []},
+  {"root": "B", "chordType": "sus4", "frets": []}
+
+]
