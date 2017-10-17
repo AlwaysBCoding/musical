@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Guitar from '../models/Guitar'
+import MusicDecorator from '../decorators/MusicDecorator'
 import _ from 'lodash'
 
 class Fretboard extends Component {
@@ -56,7 +57,7 @@ class Fretboard extends Component {
       // RENDER FRET
       return (
         <div onClick={(event) => { clickFunction.apply(this, [{event, fret, stringIndex}]) }} key={`fret-${fretIndex}`} className={`fret fret-${fretIndex} ${fretState}`} data-note={fret.note} data-fret-index={fretIndex} data-string-index={stringIndex}>
-          <p className={`note`} data-note={fret.note} data-fret-index={fretIndex} data-string-index={stringIndex}>{fret.note}</p>
+          <p className={`note`} data-note={fret.note} data-fret-index={fretIndex} data-string-index={stringIndex}>{MusicDecorator.displayNote(fret.note, {context: "standard"})}</p>
         </div>
       )
     }

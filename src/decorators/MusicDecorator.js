@@ -33,6 +33,25 @@ class MusicDecorator {
     return displayString
   }
 
+  static displayNote(note, {context}) {
+    switch(context) {
+      case "standard":
+        if(note.length === 1) {
+          return note
+        } else {
+          return `${note.split('')[0]}#`
+        }
+      case "analyze":
+        return note
+      default:
+        if(note.length === 1) {
+          return note
+        } else {
+          return `${note.split('')[0]}#`
+        }
+    }
+  }
+
 }
 
 export default MusicDecorator

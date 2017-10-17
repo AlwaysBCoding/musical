@@ -2,6 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 import ScalesData from '../data/scales.json'
 import ChordsData from '../data/chords.json'
+import MusicDecorator from '../decorators/MusicDecorator'
 
 const NOTES_MANIFEST = ["C", "CD", "D", "DE", "E", "F", "FG", "G", "GA", "A", "AB", "B"]
 const ALL_SCALES = ScalesData
@@ -176,27 +177,27 @@ class Guitar {
   //   return {
   //     "openString": openString,
   //     "frets": [
-  //       NOTES_MANIFEST[(rootIndex + 1) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 2) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 3) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 4) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 5) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 6) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 7) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 8) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 9) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 10) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 11) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 12) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 13) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 14) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 15) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 16) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 17) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 18) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 19) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 20) % 12],
-  //       NOTES_MANIFEST[(rootIndex + 21) % 12]
+        // NOTES_MANIFEST[(rootIndex + 1) % 12],
+        // NOTES_MANIFEST[(rootIndex + 2) % 12],
+        // NOTES_MANIFEST[(rootIndex + 3) % 12],
+        // NOTES_MANIFEST[(rootIndex + 4) % 12],
+        // NOTES_MANIFEST[(rootIndex + 5) % 12],
+        // NOTES_MANIFEST[(rootIndex + 6) % 12],
+        // NOTES_MANIFEST[(rootIndex + 7) % 12],
+        // NOTES_MANIFEST[(rootIndex + 8) % 12],
+        // NOTES_MANIFEST[(rootIndex + 9) % 12],
+        // NOTES_MANIFEST[(rootIndex + 10) % 12],
+        // NOTES_MANIFEST[(rootIndex + 11) % 12],
+        // NOTES_MANIFEST[(rootIndex + 12) % 12],
+        // NOTES_MANIFEST[(rootIndex + 13) % 12],
+        // NOTES_MANIFEST[(rootIndex + 14) % 12],
+        // NOTES_MANIFEST[(rootIndex + 15) % 12],
+        // NOTES_MANIFEST[(rootIndex + 16) % 12],
+        // NOTES_MANIFEST[(rootIndex + 17) % 12],
+        // NOTES_MANIFEST[(rootIndex + 18) % 12],
+        // NOTES_MANIFEST[(rootIndex + 19) % 12],
+        // NOTES_MANIFEST[(rootIndex + 20) % 12],
+        // NOTES_MANIFEST[(rootIndex + 21) % 12]
   //     ]
   //   }
   // }
@@ -280,8 +281,8 @@ class Guitar {
 
   static scalesForNote(note) {
     return {
-      "major": _.find(ALL_SCALES, {note, scaleType: "major"}).scale,
-      "minor": _.find(ALL_SCALES, {note, scaleType: "minor"}).scale
+      "major": _.map(_.find(ALL_SCALES, {note, scaleType: "major"}).scale, (note) => { return MusicDecorator.displayNote(note, {context: "standard"})}),
+      "minor": _.map(_.find(ALL_SCALES, {note, scaleType: "minor"}).scale, (note) => { return MusicDecorator.displayNote(note, {context: "standard"})})
     }
   }
 
