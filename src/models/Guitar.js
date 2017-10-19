@@ -10,6 +10,12 @@ const ALL_CHORDS = ChordsData
 
 class Guitar {
 
+  constructor({tuning}) {
+    this.tuning = tuning
+  }
+
+  // CLASS METHODS
+  // =====================
   static standardTuning() {
     // Calling Open String Fret 0
     return [
@@ -299,6 +305,56 @@ class Guitar {
   // static findChords(notes) {
   //
   // }
+
+  // INSTANCE METHODS
+  // =====================
+  findNotes(note) {
+    var noteName = note.note
+    var ALL_FRETS = _.map(_.reverse(this.tuning.slice()), (string) => { return string.frets })
+    var PATCHED_FRETS = []
+    _.each(ALL_FRETS, (string, stringIndex) => {
+      _.each(string, (fret) => {
+        PATCHED_FRETS.push(Object.assign(fret, {stringIndex: stringIndex}))
+      })
+    })
+    return {
+      startNote: note,
+      matches: _.filter(PATCHED_FRETS, (fret) => { return fret.note === noteName })
+    }
+  }
+
+  findKey(note, {keyName}) {
+    var noteName = note.note
+    var ALL_FRETS = _.map(_.reverse(this.tuning.slice()), (string) => { return string.frets })
+    var PATCHED_FRETS = []
+    _.each(ALL_FRETS, (string, stringIndex) => {
+      _.each(string, (fret) => {
+        PATCHED_FRETS.push(Object.assign(fret, {stringIndex: stringIndex}))
+      })
+    })
+
+    var scale = []
+    switch(keyName) {
+      case "major":
+        scale =  _.find(ALL_SCALES, {note: noteName, scaleType: "major"}).scale
+        break;
+      case "minor":
+        scale = _.find(ALL_SCALES, {note: noteName, scaleType: "minor"}).scale
+        break;
+      case "majorPentatonic":
+        scale =  _.reject(_.find(ALL_SCALES, {note: noteName, scaleType: "major"}).scale, (item, index) => { return index === 3 || index === 6 })
+        break;
+      case "minorPentatonic":
+        scale =  _.reject(_.find(ALL_SCALES, {note: noteName, scaleType: "minor"}).scale, (item, index) => { return index === 1 || index === 5 })
+        break;
+      default:
+        scale = [];
+    }
+    return {
+      startNote: note,
+      matches: _.filter(PATCHED_FRETS, (fret) => { return _.includes(scale, fret.note) })
+    }
+  }
 
 }
 

@@ -31,7 +31,7 @@ class App extends Component {
   componentWillMount() {
     this.eventEmitter = new EventEmitter()
 
-    // FRETCLICK
+    // FRETPRESS
     this.eventEmitter.addListener("fretPress", ({fretIndex, stringIndex, note, frequency}) => {
       var pressedFrets = this.state.pressed
       pressedFrets.push({fretIndex, stringIndex, note, frequency})
@@ -48,6 +48,7 @@ class App extends Component {
       })
     })
 
+    // CHORDSEARCH
     this.eventEmitter.addListener("chordSearch", ({chordName}) => {
       var chord = Guitar.chordSearch(chordName)
       if(chord) {
@@ -65,6 +66,7 @@ class App extends Component {
     // this.FR = new FretboardRenderer(document.querySelector("div.tgt"), {tuning: ["E", "A", "D", "G", "B", "E"]})
     // this.FR.renderGuitar({direction: "lefty"})
     window.Guitar = Guitar
+    window.guitar = new Guitar({tuning: Guitar.standardTuning()})
   }
 
   _clearState() {
@@ -75,13 +77,41 @@ class App extends Component {
     })
   }
 
-  _showKey() {
-    // this.setState({
-    //   activeNotes: this.state.analysis[0].scale
-    // })
+  _showNote() {
+    var note = this.state.pressed[0]
+    this.setState({
+      ghosted: window.guitar.findNotes(note).matches
+    })
+  }
+
+  _showKey(event, {keyName}) {
+    var note = this.state.pressed[0]
+    this.setState({
+      ghosted: window.guitar.findKey(note, {keyName}).matches
+    })
+  }
+
+  _showScale() {
+
   }
 
   render() {
+    var Actions = []
+    if(this.state.pressed.length === 1) {
+      Actions.push(
+        <button key="action1" onClick={(event) => { this._clearState(event) }}>CLEAR STATE</button>,
+        <button key="action2" onClick={(event) => { this._showNote(event) }}>SHOW NOTE</button>,
+        <button key="action3" onClick={(event) => { this._showKey(event, {keyName: "major"}) }}>SHOW MAJOR KEY</button>,
+        <button key="action4" onClick={(event) => { this._showKey(event, {keyName: "minor"}) }}>SHOW MINOR KEY</button>,
+        <button key="action5" onClick={(event) => { this._showKey(event, {keyName: "majorPentatonic"}) }}>SHOW MAJOR PENTATONIC KEY</button>,
+        <button key="action6" onClick={(event) => { this._showKey(event, {keyName: "minorPentatonic"}) }}>SHOW MINOR PENTATONIC KEY</button>
+      )
+    } else if (this.state.pressed.length > 1) {
+      Actions.push(
+        <button key="action1" onClick={(event) => { this._clearState(event) }}>CLEAR STATE</button>,
+      )
+    }
+
     return (
       <div className="App">
         <div className="view-container">
@@ -94,8 +124,7 @@ class App extends Component {
               ghosted={this.state.ghosted}
               analysis={this.state.analysis} />
           </div>
-          <button onClick={(event) => { this._clearState(event) }}>CLEAR STATE</button>
-          {/*<button onClick={(event) => { this._showKey(event) }}>SHOW KEY</button>*/}
+          {Actions}
         </div>
       </div>
     )

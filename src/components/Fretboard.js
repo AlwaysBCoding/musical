@@ -34,17 +34,13 @@ class Fretboard extends Component {
     if(_.some(this.props.pressed, {fretIndex, stringIndex})) {
       fretState = 'pressed'
       clickFunction = this._fretUnpress
+    } else if (_.some(this.props.ghosted, {fretIndex, stringIndex})) {
+      fretState = 'ghosted'
+      clickFunction= this._fretPress
     } else {
       fretState = ''
       clickFunction = this._fretPress
     }
-    // if(_.some(this.props.activeFrets, {fretIndex, stringIndex})) {
-    //   fretState = 'pressed'
-    // } else if (_.includes(this.props.activeNotes, fret)) {
-    //   fretState = 'ghosted'
-    // } else {
-    //   fretState = ''
-    // }
 
     if(fret.index === 0) {
       // RENDER OPEN STRING
