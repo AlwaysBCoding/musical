@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BarLayer from '../components/daw/BarLayer'
+import Instrument from '../components/daw/Instrument'
 
 class DrumlineScreen extends Component {
 
@@ -11,7 +12,9 @@ class DrumlineScreen extends Component {
   render() {
     return (
       <div className="screen drumline-screen">
-        <BarLayer />
+        <BarLayer instrument={Instrument.bassDrum()} />
+        <br />
+        <BarLayer instrument={Instrument.snareDrum()} />
       </div>
     )
   }

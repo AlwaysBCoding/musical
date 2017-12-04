@@ -18,7 +18,12 @@ class BarLayer extends Component {
 
     return (
       <div className="daw-component bar-layer">
-        {Beats}
+        <div className="instrument">
+          <p className="instrument-display">{this.props.instrument.display}</p>
+        </div>
+        <div className="beats">
+          {Beats}
+        </div>
       </div>
     )
   }

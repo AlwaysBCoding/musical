@@ -1,17 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Instrument extends Component {
+class Instrument {
 
-  constructor(props) {
-    super(props)
-    this.state = {}
+  constructor() {
   }
 
-  render() {
-    return (
-      <div className="daw-component instrument">
-      </div>
-    )
+  static bassDrum() {
+    return {
+      "display": "Bass Drum"
+    }
+  }
+
+  static snareDrum() {
+    return {
+      "display": "Snare Drum"
+    }
   }
 
 }

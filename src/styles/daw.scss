@@ -5,8 +5,22 @@
   justify-content: flex-start;
   align-items: stretch;
   background-color: coral;
-  box-sizing: border-box;
-  border: 1px solid black;
+
+  .instrument {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .beats {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 50px;
+  }
 }
 
 .bar-layer-beat {
