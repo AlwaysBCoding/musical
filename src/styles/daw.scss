@@ -1,0 +1,35 @@
+.bar-layer {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: coral;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.bar-layer-beat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  cursor: pointer;
+
+  .beat-number {
+    font-family: helvetica;
+    font-weight: 500;
+  }
+
+  &.trigger {
+    background-color: skyblue;
+  }
+
+  &.no-trigger {
+    background-color: white;
+  }
+
+}
