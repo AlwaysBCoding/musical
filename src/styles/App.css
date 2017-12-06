@@ -35,6 +35,16 @@
   .bar-layer-beat.no-trigger {
     background-color: white; }
 
+.play-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+  background-color: mistyrose; }
+
 body {
   margin: 0;
   padding: 0;

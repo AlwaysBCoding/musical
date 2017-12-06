@@ -47,3 +47,14 @@
   }
 
 }
+
+.play-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+  background-color: mistyrose;
+}

@@ -1,19 +1,20 @@
-import React from 'react'
-
 class Instrument {
 
-  constructor() {
-  }
-
-  static bassDrum() {
+  static kick() {
     return {
-      "display": "Bass Drum"
+      "display": "Kick"
     }
   }
 
-  static snareDrum() {
+  static snare() {
     return {
-      "display": "Snare Drum"
+      "display": "Snare"
+    }
+  }
+
+  static clap() {
+    return {
+      "display": "Clap"
     }
   }
 
