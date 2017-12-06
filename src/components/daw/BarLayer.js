@@ -13,7 +13,7 @@ class BarLayer extends Component {
   render() {
     var Beats = []
     _.times(this.numberOfBeats, (index) => {
-      Beats.push(<BarLayerBeat key={index} beatIndex={index} />)
+      Beats.push(<BarLayerBeat key={index} eventEmitter={this.props.eventEmitter} instrument={this.props.instrument} beatIndex={index} />)
     })
 
     return (
