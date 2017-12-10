@@ -7,7 +7,9 @@ class DrumlineScreen extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      beatsPerMinute: 120
+    }
     this.kickBeats = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     this.snareBeats = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     this.clapBeats = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
@@ -21,6 +23,7 @@ class DrumlineScreen extends Component {
       ],
       () => {}
     )
+    this.currentAudioInterval = undefined
   }
 
   componentWillMount() {
@@ -42,7 +45,8 @@ class DrumlineScreen extends Component {
   _playDrumline(event) {
     var renderContext = this
     var playIndex = 0;
-    setInterval(() => {
+    var intervalDelay = (1000.0 / (4 * (this.state.beatsPerMinute / 60.0)))
+    var interval = setInterval(() => {
       if(renderContext.kickBeats[playIndex]) {
         var kick = renderContext.audioContext.createBufferSource()
         kick.buffer = this.bufferLoader.bufferList[0];
@@ -63,7 +67,16 @@ class DrumlineScreen extends Component {
       }
       playIndex++
       if(playIndex > 15) { playIndex = 0 }
-    }, 125)
+    }, intervalDelay)
+    this.currentAudioInterval = interval
+  }
+
+  _stopDrumline(event) {
+    clearInterval(this.currentAudioInterval)
+  }
+
+  handleChange(event) {
+    this.setState({beatsPerMinute: event.target.value})
   }
 
   render() {
@@ -79,6 +92,20 @@ class DrumlineScreen extends Component {
           className="play-button"
           onClick={this._playDrumline.bind(this)}>
           <p className="play-button-text">PLAY</p>
+        </div>
+        <br />
+        <div
+          className="stop-button"
+          onClick={this._stopDrumline.bind(this)}>
+          <p className="stop-button-text">STOP</p>
+        </div>
+        <br />
+        <div className="beats-per-minute">
+          <input
+            type="number"
+            className="beats-per-minute-input"
+            value={this.state.beatsPerMinute}
+            onChange={(event) => { this.handleChange(event) }} />
         </div>
       </div>
     )
