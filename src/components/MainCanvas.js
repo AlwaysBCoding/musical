@@ -11,6 +11,8 @@ class MainCanvas extends Component {
         <BarLayer
           key={`bar-layer-${index}`}
           layerIndex={index}
+          currentAudioInterval={this.props.currentAudioInterval}
+          currentBeat={this.props.currentBeat}
           eventEmitter={this.props.eventEmitter}
           sound={sound} />
       )

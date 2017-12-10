@@ -23,7 +23,9 @@ class BarLayer extends Component {
           eventEmitter={this.props.eventEmitter}
           sound={this.props.sound}
           layerIndex={this.props.layerIndex}
-          beatIndex={index} />
+          beatIndex={index}
+          currentAudioInterval={this.props.currentAudioInterval}
+          currentBeat={this.props.currentBeat} />
       )
     })
 

@@ -36,6 +36,8 @@
     background-color: skyblue; }
   .bar-layer-beat.no-trigger {
     background-color: white; }
+  .bar-layer-beat.current-beat {
+    background-color: yellow; }
 
 body {
   margin: 0;

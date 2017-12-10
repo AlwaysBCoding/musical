@@ -20,7 +20,7 @@ class BarLayerBeat extends Component {
   }
 
   render() {
-    var triggerClass, triggerFunction;
+    var triggerClass, currentBeatClass, triggerFunction;
     if(this.state.trigger) {
       triggerClass = 'trigger';
       triggerFunction = this._untriggerBeat
@@ -29,9 +29,15 @@ class BarLayerBeat extends Component {
       triggerFunction = this._triggerBeat
     }
 
+    if(this.props.currentAudioInterval && (this.props.currentBeat === this.props.beatIndex)) {
+      currentBeatClass = 'current-beat'
+    } else {
+      currentBeatClass = ''
+    }
+
     return (
       <div
-        className={`daw-component bar-layer-beat ${triggerClass}`}
+        className={`daw-component bar-layer-beat ${triggerClass} ${currentBeatClass}`}
         onClick={triggerFunction.bind(this)}>
         <p className="beat-number">{this.props.beatIndex + 1}</p>
       </div>

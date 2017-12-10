@@ -19,7 +19,9 @@ class App extends Component {
       audioSettings: {
         beatsPerMinute: 120
       },
-      barLayers: []
+      barLayers: [],
+      currentAudioInterval: undefined,
+      currentBeat: 0
     }
     this.eventEmitter = new EventEmitter()
     this.audioContext = new AudioContext();
@@ -27,8 +29,7 @@ class App extends Component {
       this.audioContext,
       [],
       () => {}
-    ),
-    this.currentAudioInterval = undefined;
+    );
   }
 
   componentWillMount() {
@@ -98,25 +99,25 @@ class App extends Component {
 
     this.eventEmitter.on('play', ({}) => {
       var renderContext = this
-      var currentBeat = 0;
       var intervalDelay = (1000.0 / (4 * (this.state.audioSettings.beatsPerMinute / 60.0)))
       var interval = setInterval(() => {
         _.each(this.state.barLayers, (barLayer, index) => {
-          if(barLayer.beats[currentBeat]) {
+          if(barLayer.beats[renderContext.state.currentBeat]) {
             var sound = renderContext.audioContext.createBufferSource()
             sound.buffer = renderContext.audioBuffer.bufferList[index]
             sound.connect(renderContext.audioContext.destination)
             sound.start()
           }
         })
-        currentBeat++;
-        if(currentBeat > 15) { currentBeat = 0 }
+        renderContext.setState({currentBeat: (renderContext.state.currentBeat + 1)})
+        if(renderContext.state.currentBeat > 15) { renderContext.setState({currentBeat: 0}) }
       }, intervalDelay)
-      this.currentAudioInterval = interval;
+      this.setState({currentAudioInterval: interval})
     })
 
     this.eventEmitter.on('stop', ({}) => {
-      clearInterval(this.currentAudioInterval);
+      clearInterval(this.state.currentAudioInterval);
+      this.setState({currentAudioInterval: undefined})
     })
   }
 
@@ -136,6 +137,8 @@ class App extends Component {
             eventEmitter={this.eventEmitter}
             audioContext={this.audioContext}
             audioSettings={this.state.audioSettings}
+            currentAudioInterval={this.state.currentAudioInterval}
+            currentBeat={this.state.currentBeat}
             barLayers={this.state.barLayers} />
         </div>
       </div>
