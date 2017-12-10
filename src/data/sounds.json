@@ -16,5 +16,11 @@
     "display": "Simple Clap",
     "hash": "6a592573c0e8d23d54ab1fdc3f08e6a140160e48450bd331c7e79d58fb5acec8",
     "path": "./sounds/6a592573c0e8d23d54ab1fdc3f08e6a140160e48450bd331c7e79d58fb5acec8.wav"
+  },
+  {
+    "ident": "woodblock",
+    "display": "Wood Block",
+    "hash": "85baa7d3f28d3feb15ec0182f7b4c182fa3125215e26c44631cbc331d2b5cab4",
+    "path": "./sounds/85baa7d3f28d3feb15ec0182f7b4c182fa3125215e26c44631cbc331d2b5cab4.wav"
   }
 ]

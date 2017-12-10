@@ -117,7 +117,10 @@ class App extends Component {
 
     this.eventEmitter.on('stop', ({}) => {
       clearInterval(this.state.currentAudioInterval);
-      this.setState({currentAudioInterval: undefined})
+      this.setState({
+        currentAudioInterval: undefined,
+        currentBeat: 0
+      })
     })
   }
 
