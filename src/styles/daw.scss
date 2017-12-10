@@ -6,12 +6,16 @@
   align-items: stretch;
   background-color: coral;
 
-  .instrument {
+  .sound {
     width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .remove-layer {
+      cursor: pointer;
+    }
   }
 
   .beats {

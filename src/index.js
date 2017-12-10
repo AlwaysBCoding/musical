@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
+import _ from 'lodash'
 import { EventEmitter } from 'events'
 
-import DrumlineScreen from './screens/DrumlineScreen'
+import ToolsMenu from './components/ToolsMenu'
+import MainCanvas from './components/MainCanvas'
 
 import './styles/App.css';
 
@@ -11,13 +13,29 @@ class App extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      barLayers: []
+    }
+    this.eventEmitter = new EventEmitter()
+    this.audioContext = new AudioContext();
   }
 
   componentWillMount() {
-    this.eventEmitter = new EventEmitter()
+    this.eventEmitter.on('add-layer', ({sound}) => {
+      var newBarLayers = this.state.barLayers
+      newBarLayers.push({sound})
+      this.setState({
+        barLayers: newBarLayers
+      })
+    })
 
-    // NO EVENTS YET
+    this.eventEmitter.on('remove-layer', ({layerIndex}) => {
+      var newBarLayers = this.state.barLayers
+      newBarLayers.splice(layerIndex, 1)
+      this.setState({
+        barLayers: newBarLayers
+      })
+    })
   }
 
   componentDidMount() {
@@ -28,7 +46,13 @@ class App extends Component {
     return (
       <div className="App">
         <div className="view-container">
-          <DrumlineScreen eventEmitter={this.eventEmitter} />
+          <ToolsMenu
+            eventEmitter={this.eventEmitter}
+            audioContext={this.audioContext} />
+          <MainCanvas
+            eventEmitter={this.eventEmitter}
+            audioContext={this.audioContext}
+            barLayers={this.state.barLayers} />
         </div>
       </div>
     )

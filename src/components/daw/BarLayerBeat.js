@@ -11,12 +11,12 @@ class BarLayerBeat extends Component {
 
   _triggerBeat() {
     this.setState({ trigger: true })
-    this.props.eventEmitter.emit("triggerBeat", {instrument: this.props.instrument, beatIndex: this.props.beatIndex})
+    this.props.eventEmitter.emit("triggerBeat", {sound: this.props.sound, beatIndex: this.props.beatIndex})
   }
 
   _untriggerBeat() {
     this.setState({ trigger: false })
-    this.props.eventEmitter.emit("untriggerBeat", {instrument: this.props.instrument, beatIndex: this.props.beatIndex})
+    this.props.eventEmitter.emit("untriggerBeat", {sound: this.props.sound, beatIndex: this.props.beatIndex})
   }
 
   render() {

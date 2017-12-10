@@ -10,16 +10,31 @@ class BarLayer extends Component {
     this.numberOfBeats = 16
   }
 
+  _removeLayer(event) {
+    this.props.eventEmitter.emit("remove-layer", {layerIndex: this.props.layerIndex})
+  }
+
   render() {
     var Beats = []
     _.times(this.numberOfBeats, (index) => {
-      Beats.push(<BarLayerBeat key={index} eventEmitter={this.props.eventEmitter} instrument={this.props.instrument} beatIndex={index} />)
+      Beats.push(
+        <BarLayerBeat
+          key={index}
+          eventEmitter={this.props.eventEmitter}
+          sound={this.props.sound}
+          beatIndex={index} />
+      )
     })
 
     return (
       <div className="daw-component bar-layer">
-        <div className="instrument">
-          <p className="instrument-display">{this.props.instrument.display}</p>
+        <div className="sound">
+          <p
+            className="remove-layer"
+            onClick={(event) => { this._removeLayer(event) }}>
+          X
+          </p>
+          <p className="sound-display">{this.props.sound.display}</p>
         </div>
         <div className="beats">
           {Beats}
