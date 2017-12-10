@@ -37,26 +37,6 @@
   .bar-layer-beat.no-trigger {
     background-color: white; }
 
-.play-button, .stop-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 100px;
-  cursor: pointer;
-  background-color: mistyrose; }
-
-.beats-per-minute {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 200px;
-  cursor: pointer;
-  background-color: dodgerblue; }
-
 body {
   margin: 0;
   padding: 0;
@@ -98,9 +78,36 @@ a {
   align-items: center;
   height: 50px;
   cursor: pointer;
-  background-color: green;
+  background-color: rgba(0, 255, 0, 0.25);
   box-sizing: border-box;
   border-bottom: 1px solid black; }
+.tools-menu .settings {
+  background-color: red;
+  border-bottom: 1px solid black; }
+.tools-menu .actions {
+  background-color: orange;
+  border-bottom: 1px solid black; }
+.tools-menu .sounds {
+  background-color: yellow;
+  border-bottom: 1px solid black; }
+.tools-menu .play-button, .tools-menu .stop-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+  background-color: mistyrose; }
+.tools-menu .beats-per-minute {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+  background-color: dodgerblue; }
 
 .search-bar {
   width: 100%;

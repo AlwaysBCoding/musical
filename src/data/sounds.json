@@ -3,18 +3,18 @@
     "ident": "kick",
     "display": "Simple Kick",
     "hash": "ce4aad524f0da1f7741c5c1efaae849b1de8a97ceaf078efcf11a1a42c35bdc1",
-    "path": "/sounds/ce4aad524f0da1f7741c5c1efaae849b1de8a97ceaf078efcf11a1a42c35bdc1.wav"
+    "path": "./sounds/ce4aad524f0da1f7741c5c1efaae849b1de8a97ceaf078efcf11a1a42c35bdc1.wav"
   },
   {
     "ident": "snare",
     "display": "Simple Snare",
     "hash": "3406596a07375fe7c967e706bdba438ee1f79930d0582f29b01ecfd89c96d40b",
-    "path": "/sounds/3406596a07375fe7c967e706bdba438ee1f79930d0582f29b01ecfd89c96d40b.wav"
+    "path": "./sounds/3406596a07375fe7c967e706bdba438ee1f79930d0582f29b01ecfd89c96d40b.wav"
   },
   {
     "ident": "clap",
     "display": "Simple Clap",
     "hash": "6a592573c0e8d23d54ab1fdc3f08e6a140160e48450bd331c7e79d58fb5acec8",
-    "path": "/sounds/6a592573c0e8d23d54ab1fdc3f08e6a140160e48450bd331c7e79d58fb5acec8.wav"
+    "path": "./sounds/6a592573c0e8d23d54ab1fdc3f08e6a140160e48450bd331c7e79d58fb5acec8.wav"
   }
 ]

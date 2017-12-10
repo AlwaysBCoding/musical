@@ -6,13 +6,13 @@ class MainCanvas extends Component {
 
   render() {
     var BarLayers = []
-    _.each(this.props.barLayers, (barLayer, index) => {
+    _.each(this.props.barLayers, (sound, index) => {
       BarLayers.push(
         <BarLayer
           key={`bar-layer-${index}`}
           layerIndex={index}
           eventEmitter={this.props.eventEmitter}
-          sound={barLayer.sound} />
+          sound={sound} />
       )
     })
 

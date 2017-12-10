@@ -8,6 +8,18 @@ class ToolsMenu extends Component {
     this.props.eventEmitter.emit('add-layer', {sound})
   }
 
+  _updateAudioSettings(event) {
+    this.props.eventEmitter.emit('update-audio-settings', {setting: "beatsPerMinute", value: event.target.value})
+  }
+
+  _play(event) {
+    this.props.eventEmitter.emit('play', {})
+  }
+
+  _stop(event) {
+    this.props.eventEmitter.emit('stop', {})
+  }
+
   render() {
     var Sounds = []
     _.each(SoundsList, (sound) => {
@@ -23,6 +35,29 @@ class ToolsMenu extends Component {
 
     return (
       <div className="tools-menu">
+        <div className="settings">
+          <div className="beats-per-minute">
+            <input
+              type="number"
+              className="beats-per-minute-input"
+              value={this.props.audioSettings.beatsPerMinute}
+              onChange={(event) => {
+                this._updateAudioSettings(event)
+              }} />
+          </div>
+        </div>
+        <div className="actions">
+          <div
+            className="button"
+            onClick={(event) => { this._play(event) }}>
+            <p>PLAY</p>
+          </div>
+          <div
+            className="button"
+            onClick={(event) => { this._stop(event) }}>
+            <p>STOP</p>
+          </div>
+        </div>
         <div className="sounds">
           {Sounds}
         </div>

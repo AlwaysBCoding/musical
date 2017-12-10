@@ -51,25 +51,3 @@
   }
 
 }
-
-.play-button, .stop-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 100px;
-  cursor: pointer;
-  background-color: mistyrose;
-}
-
-.beats-per-minute {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 200px;
-  cursor: pointer;
-  background-color: dodgerblue;
-}
