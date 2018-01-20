@@ -8,6 +8,29 @@ const NOTES_MANIFEST = ["C", "CD", "D", "DE", "E", "F", "FG", "G", "GA", "A", "A
 const ALL_SCALES = ScalesData
 const ALL_CHORDS = ChordsData
 
+class Bass {
+  constructor({tuning}) {
+    this.tuning = tuning
+  }
+
+  static standardTuning() {
+    return [
+      {frets: [
+        {fretIndex: 0, note: "E", frequency: 41.20} // E1
+      ]},
+      {frets: [
+        {fretIndex: 0, note: "A", frequency: 55} // A1
+      ]},
+      {frets: [
+        {fretIndex: 0, note: "D", frequency: 73.42} // D2
+      ]},
+      {frets: [
+        {fretIndex: 0, note: "G", frequency: 98} // G2
+      ]}
+    ]
+  }
+}
+
 class Guitar {
 
   constructor({tuning}) {
@@ -20,7 +43,7 @@ class Guitar {
     // Calling Open String Fret 0
     return [
       {frets: [
-        {fretIndex: 0, note: "E", frequency: 82},
+        {fretIndex: 0, note: "E", frequency: 82}, // E2
         {fretIndex: 1, note: "F", frequency: 87},
         {fretIndex: 2, note: "FG", frequency: 92},
         {fretIndex: 3, note: "G", frequency: 98},
@@ -43,7 +66,7 @@ class Guitar {
         {fretIndex: 20, note: "C", frequency: 262}
       ]},
       {frets: [
-        {fretIndex: 0, note: "A", frequency: 110},
+        {fretIndex: 0, note: "A", frequency: 110}, // A3
         {fretIndex: 1, note: "AB", frequency: 117},
         {fretIndex: 2, note: "B", frequency: 123},
         {fretIndex: 3, note: "C", frequency: 131},
@@ -66,7 +89,7 @@ class Guitar {
         {fretIndex: 20, note: "F", frequency: 349}
       ]},
       {frets: [
-        {fretIndex: 0, note: "D", frequency: 147},
+        {fretIndex: 0, note: "D", frequency: 147}, // D3
         {fretIndex: 1, note: "DE", frequency: 156},
         {fretIndex: 2, note: "E", frequency: 165},
         {fretIndex: 3, note: "F", frequency: 175},
@@ -89,7 +112,7 @@ class Guitar {
         {fretIndex: 20, note: "AB", frequency: 466}
       ]},
       {frets: [
-        {fretIndex: 0, note: "G", frequency: 196},
+        {fretIndex: 0, note: "G", frequency: 196}, // G3
         {fretIndex: 1, note: "GA", frequency: 208},
         {fretIndex: 2, note: "A", frequency: 220},
         {fretIndex: 3, note: "AB", frequency: 233},
@@ -112,7 +135,7 @@ class Guitar {
         {fretIndex: 20, note: "DE", frequency: 622}
       ]},
       {frets: [
-        {fretIndex: 0, note: "B", frequency: 247},
+        {fretIndex: 0, note: "B", frequency: 247}, // B3
         {fretIndex: 1, note: "C", frequency: 262},
         {fretIndex: 2, note: "CD", frequency: 277},
         {fretIndex: 3, note: "D", frequency: 294},
@@ -135,7 +158,7 @@ class Guitar {
         {fretIndex: 20, note: "G", frequency: 784}
       ]},
       {frets: [
-        {fretIndex: 0, note: "E", frequency: 330},
+        {fretIndex: 0, note: "E", frequency: 330}, // E4
         {fretIndex: 1, note: "F", frequency: 349},
         {fretIndex: 2, note: "FG", frequency: 370},
         {fretIndex: 3, note: "G", frequency: 392},

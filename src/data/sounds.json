@@ -18,6 +18,12 @@
     "path": "./sounds/6a592573c0e8d23d54ab1fdc3f08e6a140160e48450bd331c7e79d58fb5acec8.wav"
   },
   {
+    "ident": "hi-hat",
+    "display": "Simple Hi-Hat",
+    "hash": "6a693958943d53059fa827ec1fc917d7d89971d26fdcc15f3f296dd22aa4bc77",
+    "path": "./sounds/6a693958943d53059fa827ec1fc917d7d89971d26fdcc15f3f296dd22aa4bc77.wav"
+  },
+  {
     "ident": "woodblock",
     "display": "Wood Block",
     "hash": "85baa7d3f28d3feb15ec0182f7b4c182fa3125215e26c44631cbc331d2b5cab4",
